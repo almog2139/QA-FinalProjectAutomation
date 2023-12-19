@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Api Suite" parallel="false">
+    <listeners>
+        <listener class-name="utilities.Listeners" />
+    </listeners>
+    <test name="Api Test">
+        <parameter name="PlatformName" value="api" />
+        <classes>
+            <class name="sanity.GrafanaApi">
+            </class>
+        </classes>
+    </test>
+
+</suite>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Environment>
+    <!--Timeout-->
+    <Timeout>10</Timeout>
+    <!--Authentication-->
+    <UserName>Admin</UserName>
+    <Password>admin123</Password>
+    <!--General-->
+<!--  <PlatformName>web</PlatformName>-->
+<!--    <PlatformName>electron</PlatformName>-->
+<!--    <PlatformName>api</PlatformName>-->
+<!--    <PlatformName>mobile</PlatformName>-->
+<!--    <PlatformName>desktop</PlatformName>-->
+
+    <!--Web-->
+    <BrowserName>chrome</BrowserName>
+    <Url>https://opensource-demo.orangehrmlive.com/web/index.php/auth/login</Url>
+    <MainPageUrl>https://opensource-demo.orangehrmlive.com/web/index.php/auth/login</MainPageUrl>
+    <ImageRepo>D:\Automation\FinalProject\ImageRepository\</ImageRepo>
+    <!--Data Driven Testing-->
+    <DDTFile>D:\Automation\FinalProject\DDTFiles\employeesId.csv</DDTFile>
+    <DDTRows>3</DDTRows>
+    <DDTColums>2</DDTColums>
+    <!--Mobile-->
+    <UDID>2793c6ecd61c7ece</UDID>
+    <AppPackage>kr.sira.unit</AppPackage>
+    <AppActivity>.Intro</AppActivity>
+    <AppiumServer>http://localhost:4723/wd/hub</AppiumServer>
+    <!--RestApi-->
+    <UrlApi>http://localhost:3000/</UrlApi>
+    <UserNameApi>admin</UserNameApi>
+    <PasswordApi>admin123</PasswordApi>
+    <!--Electron-->
+    <ElectronDriverPath>D:\Automation\FinalProject\Drivers\electrondriver.exe</ElectronDriverPath>
+    <ElectronAppPath>C:\Users\Almog\AppData\Local\Programs\todolist\Todolist.exe</ElectronAppPath>
+    <RgbBlue>(87, 185, 244)</RgbBlue>
+    <RgbRed>(255, 103, 93)</RgbRed>
+    <RgbYellow>(245, 206, 83)</RgbYellow>
+    <!--Desktop-->
+    <CalculatorApp>Microsoft.WindowsCalculator_8wekyb3d8bbwe!App</CalculatorApp>
+    <AppiumServerDesktop>http://127.0.0.1:4723</AppiumServerDesktop>
+    <!--DataBase-->
+    <dbUrl>jdbc:mysql://sql12.freemysqlhosting.net:3306/sql12671678</dbUrl>
+    <dbUserName>sql12671678</dbUserName>
+    <dbPassword>JhbWBspkz4</dbPassword>
+
+
+</Environment>
