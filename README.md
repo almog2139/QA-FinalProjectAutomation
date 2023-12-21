@@ -58,7 +58,7 @@ This project performs automated testing of various applications:
 ---
 ## Tests Overview
 
-### OrangeHrm: Web Testing with Selenium WebDriver - [OrangeHrm Web Tests Video]()
+### OrangeHrm: Web Testing with Selenium WebDriver - [OrangeHrm Web Tests Video](https://github.com/almog2139/QA-FinalProjectAutomation/blob/main/ImageRepository/FullProjectWeb%20(1).gif)
 
 #### Web - Login to OrangeHrm with credentials pulled from an external Database
 Verify login was successful
@@ -67,8 +67,20 @@ Verify login was successful
 
 #### Web - Verify Presentation of elements in dashboard page
 
-![alt text](https://raw.githubusercontent.com/Zapkid/QA-Automation-Testing-Showcase/master/ImageRepository/GrafanaCheckUser.gif "Grafana Users")
-
+```java
+   @Test(description = "Test02 - Verify dashboard element")
+    @Description("Verify in dashboard page is all dashboard elements is display")
+    public void test02_verifyDashboardElements(){
+        Verifications.verifyVisibiltyOfElements(mainPageOrangeHRM.dashboardItems);
+    }
+    @Step("Verify visibilty of elements with using soft-asserion")
+    public static void verifyVisibiltyOfElements(List<WebElement>elements){
+        for (WebElement element:elements){
+            softAssert.assertTrue(element.isDisplayed(),element.getText()+"  not exsits!");
+        }
+        softAssert.assertAll("some elements are not displayed");
+    }
+```
 #### Web - Adding new employee and verify employee has be added
 ![alt text](https://raw.githubusercontent.com/Zapkid/QA-Automation-Testing-Showcase/master/ImageRepository/GrafanaAddUser.gif "Grafana Add NEW User")
 
@@ -78,16 +90,24 @@ Verify login was successful
 ```java
 WebFlowsOrangeHRM.verifySuccessAddingEmployee("Almog Sara");
 ```
-#### Web - Search employee  by employeeId Data Driven Testing using a data provider for multiple users & expected results
+#### Web - Search employee  by employeeId Data Driven Testing using a data provider for multiple users & expected results and verify the expected results
 ![alt text]()
+```java
+ WebFlowsOrangeHRM.searchEmployeeById(employeeId,Integer.parseInt(expectedListSize));
+```
+```java
+0221,1
+0267,1
+0821,0
+```
 
-#### Web - Delete employee by his employee id
+#### Web - Delete employee by his employee id and verify by using searchEmploeeyById method
 ![alt text]( "OrangeHrm Delete employee")
 ```java
-WebFlowsOrangeHRM.deleteEmployeeById("0257");
+WebFlowsOrangeHRM.deleteEmployeeById("0070");
 ```
 
 #### Web - Verify  logo image is located on screen by Visual lookup
-Verify this image:  ![alt text](https://raw.githubusercontent.com/Zapkid/QA-Automation-Testing-Showcase/master/ImageRepository/GrafanaAvatar.png "Grafana Visual Search") is located on screen by looking at pixels' colors
+Verify this image:  ![alt text](https://raw.githubusercontent.com/almog2139/QA-FinalProjectAutomation/master/ImageRepository/OrangeHrmLogo.png "OrangeHrm Visual Search") is located on screen by looking at pixels' colors
 
 

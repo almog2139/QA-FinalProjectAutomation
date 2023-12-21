@@ -8,9 +8,9 @@
         <parameter name="PlatformName" value="web" />
         <classes>
             <class name="sanity.OrangeHrmWeb">
-<!--                <methods>-->
-<!--                    <include name="test01_verifyLogin"/>-->
-<!--                </methods>-->
+                <methods>
+                    <include name="test05_deleteEmployeeById"/>
+                </methods>
             </class>
         </classes>
     </test>
