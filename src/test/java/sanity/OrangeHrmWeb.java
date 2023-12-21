@@ -55,11 +55,11 @@ public class OrangeHrmWeb extends CommonOps {
         WebFlowsOrangeHRM.searchEmployeeById(employeeId,Integer.parseInt(expectedListSize));
     }
 
-    @Test(description = "Test05 - Delete Employe")
-    @Description("Delete employe by his employee id ")
+    @Test(description = "Test05 - Delete Employee")
+    @Description("Delete employee by his employee id ")
     public void test05_deleteEmployeeById(){
 
-        WebFlowsOrangeHRM.deleteEmployeeById("976");
+        WebFlowsOrangeHRM.deleteEmployeeById("0290");
 
     }
     @Test(description = "Test06 - Verify logo image")
