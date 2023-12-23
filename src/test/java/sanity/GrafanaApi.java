@@ -38,8 +38,7 @@ public class GrafanaApi extends CommonOps {
     public void test04_updateTeam(){
         final String teamName="update";
         final String email="almog55@gmail.com";
-
-                 ApiFlow.updateTeam(teamName,email,7);
+        ApiFlow.updateTeam(teamName,email,7);
          Verifications.verifyText(ApiFlow.getTeamProperty("teams[1].name"),teamName);
 //         Verifications.verifyText(Integer.toString(actualStatusCode),"200");
     }

@@ -15,7 +15,6 @@ import java.util.concurrent.TimeUnit;
 public class MobileFlowsUnitConverter extends CommonOps {
     @Step("fill field and convert some length with value of {value}")
     public  static  void convertByLength(String value,String selectValue){
-//        MobileActions.tap( mainPageUnitConverter.popupDismissBtn);
         MobileActions.click(mainPageUnitConverter.basicBtn);
         MobileActions.click(basicUnitConverter.lengthBtn);
         MobileActions.click(basicUnitConverter.valueInput);

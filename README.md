@@ -58,12 +58,12 @@ This project performs automated testing of various applications:
 ---
 ## Tests Overview
 
-### OrangeHrm: Web Testing with Selenium WebDriver - [OrangeHrm Web Tests Video](https://github.com/almog2139/QA-FinalProjectAutomation/blob/main/ImageRepository/FullProjectWeb%20(1).gif)
+### OrangeHrm: Web Testing with Selenium WebDriver - [OrangeHrm Web Tests Video](https://raw.githubusercontent.com/almog2139/QA-FinalProjectAutomation/master/ImageRepository//FullProjectWeb%20(1).gif)
 
 #### Web - Login to OrangeHrm with credentials pulled from an external Database
 Verify login was successful
 
-![alt text]( "OrangeHrm Login")
+![alt text](https://raw.githubusercontent.com/almog2139/QA-FinalProjectAutomation/master/ImageRepository/loginWeb.gif "OrangeHrm Login")
 
 #### Web - Verify Presentation of elements in dashboard page
 
@@ -82,7 +82,7 @@ Verify login was successful
     }
 ```
 #### Web - Adding new employee and verify employee has be added
-![alt text](https://raw.githubusercontent.com/Zapkid/QA-Automation-Testing-Showcase/master/ImageRepository/GrafanaAddUser.gif "Grafana Add NEW User")
+![alt text](https://raw.githubusercontent.com/almog2139/QA-FinalProjectAutomation/master/ImageRepository/addingEmployee.gif "OrangeHrm Add new employee")
 
 ```java
  WebFlowsOrangeHRM.addEmployee("Almog","","Sara");
@@ -90,8 +90,8 @@ Verify login was successful
 ```java
 WebFlowsOrangeHRM.verifySuccessAddingEmployee("Almog Sara");
 ```
-#### Web - Search employee  by employeeId Data Driven Testing using a data provider for multiple users & expected results and verify the expected results
-![alt text]()
+#### Web - Search employee by employeeId using Data Driven Testing - data provider for multiple users & expected results and verify the expected results
+![alt text](https://raw.githubusercontent.com/almog2139/QA-FinalProjectAutomation/master/ImageRepository/searchEmployees.gif "OrangeHrm DDT")
 ```java
  WebFlowsOrangeHRM.searchEmployeeById(employeeId,Integer.parseInt(expectedListSize));
 ```
@@ -102,7 +102,7 @@ WebFlowsOrangeHRM.verifySuccessAddingEmployee("Almog Sara");
 ```
 
 #### Web - Delete employee by his employee id and verify by using searchEmploeeyById method
-![alt text]( "OrangeHrm Delete employee")
+![alt text](https://raw.githubusercontent.com/almog2139/QA-FinalProjectAutomation/master/ImageRepository/deleteEmployee.gif "OrangeHrm Delete employee")
 ```java
 WebFlowsOrangeHRM.deleteEmployeeById("0070");
 ```
@@ -110,4 +110,19 @@ WebFlowsOrangeHRM.deleteEmployeeById("0070");
 #### Web - Verify  logo image is located on screen by Visual lookup
 Verify this image:  ![alt text](https://raw.githubusercontent.com/almog2139/QA-FinalProjectAutomation/master/ImageRepository/OrangeHrmLogo.png "OrangeHrm Visual Search") is located on screen by looking at pixels' colors
 
+#### API - Verify HTTP response property (GET), Create new Team (POST), Update Team data (PUT), Delete Team by team ID (DELETE)
+```java
+ApiFlow.getTeamProperty("teams[1].name");
+ApiFlow.createTeam(teamName,email);
+ApiFlow.updateTeam(teamName,email,7);
+ApiFlow.deleteTeam(8);
+```
+### Unit Converter: Mobile Testing with Appium Studio & Appium Driver
+####Test01 - Convert length
+![alt text](https://raw.githubusercontent.com/almog2139/QA-FinalProjectAutomation/master/ImageRepository/OrangeHrmLogo.png "Convert Length")
+####Test02 - Convert currency
+![alt text](https://raw.githubusercontent.com/almog2139/QA-FinalProjectAutomation/master/ImageRepository/OrangeHrmLogo.png "Convert Currency")
+####Test03 - Change misc favorites with swipe (appium method)
+![alt text](https://raw.githubusercontent.com/almog2139/QA-FinalProjectAutomation/master/ImageRepository/OrangeHrmLogo.png "Change Misc Favorites")
+*verify results/changes after any test
 

@@ -8,6 +8,9 @@
         <parameter name="PlatformName" value="mobile" />
         <classes>
             <class name="sanity.UnitConverterMobile">
+                <methods>
+                    <include name="test01_convertLenth()"></include>
+                </methods>
             </class>
         </classes>
     </test>

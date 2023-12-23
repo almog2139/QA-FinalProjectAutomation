@@ -22,7 +22,7 @@
     <DDTRows>3</DDTRows>
     <DDTColums>2</DDTColums>
     <!--Mobile-->
-    <UDID>2793c6ecd61c7ece</UDID>
+    <UDID>26e15fe0a4217ece</UDID>
     <AppPackage>kr.sira.unit</AppPackage>
     <AppActivity>.Intro</AppActivity>
     <AppiumServer>http://localhost:4723/wd/hub</AppiumServer>
