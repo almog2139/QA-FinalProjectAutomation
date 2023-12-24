@@ -46,7 +46,9 @@ public class MainPage {
 
     @FindBy(name="Backspace")
     public WebElement removeBtn;
-    @FindBy(name="Clear")
+
+
+    @FindBy(name = "Clear")
     public WebElement clearBtn;
     @FindBy(xpath = "//*[@AutomationId='CalculatorResults']")
     public WebElement calcResults;
@@ -78,8 +80,8 @@ public class MainPage {
     public WebElement getEightBtn(){
         return eightBtn;
     }
-    public WebElement getNineBtnBtn(){
-        return eightBtn;
+    public WebElement getNineBtn(){
+        return nineBtn;
     }
 
 }

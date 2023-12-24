@@ -1,5 +1,6 @@
 package workflows;
 
+import com.google.common.util.concurrent.Uninterruptibles;
 import extensions.UIActions;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
@@ -8,6 +9,7 @@ import utilities.CommonOps;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 public class DesktopFlow extends CommonOps {
 
@@ -25,42 +27,34 @@ public class DesktopFlow extends CommonOps {
         operationsElementMap.put("six", mainPageCalculator.getSixBtn());
         operationsElementMap.put("seven", mainPageCalculator.getSevenBtn());
         operationsElementMap.put("eight", mainPageCalculator.getEightBtn());
-        operationsElementMap.put("nine", mainPageCalculator.getNineBtnBtn());
+        operationsElementMap.put("nine", mainPageCalculator.getNineBtn());
         operationsElementMap.put("plus", mainPageCalculator.plusBtn);
         operationsElementMap.put("minus", mainPageCalculator.minusBtn);
         operationsElementMap.put("divide", mainPageCalculator.divideBtn);
         operationsElementMap.put("percent", mainPageCalculator.percentBtn);
         operationsElementMap.put("mult", mainPageCalculator.multBtn);
+        operationsElementMap.put("equals", mainPageCalculator.equalsBtn);
 
     }
 
     @Step("Calculat Invoicing operations")
-    public static String calculatAction(String num1, String num2, String operation) {
+    public static String calculatAction(String equation) {
         initialOperationMap();
-        //Enter first number
-        if (num1.length() > 1) {
-            clickDigits(num1);
-        } else {
-            String wordNumber=convertDigitToString(num1.charAt(0));
-            UIActions.click(operationsElementMap.get(wordNumber.toLowerCase()));
-        }
-        // Perform the operation
-        UIActions.click(operationsElementMap.get(operation));
-        //Enter second number
-        if (num2.length() > 1) {
-           clickDigits(num2);
-        } else {
-            String wordNumber=convertDigitToString(num2.charAt(0));
-            UIActions.click(operationsElementMap.get(wordNumber.toLowerCase()));
+        //2+5*10-5+9
+        for (int i=0;i<equation.length();i++){
+            String charToEnter=convertOperatorToString(equation.charAt(i));
+            UIActions.click(operationsElementMap.get(charToEnter.toLowerCase()));
         }
         UIActions.click(mainPageCalculator.equalsBtn);
         String results=mainPageCalculator.calcResults.getText().split(" ")[2];
-        System.out.println("res"+results);
+
         return results;
 
-    }
-    @Step("Convert digit of number to a word ")
-    public static String convertDigitToString(char digit){
+   }
+
+    @Step("Convert operator to a word ")
+    public static String convertOperatorToString(char digit){
+
         String digitString = null;
         switch (digit) {
             case '0':
@@ -93,6 +87,24 @@ public class DesktopFlow extends CommonOps {
             case '9':
                 digitString= "nine";
                 break;
+            case '+':
+                digitString= "plus";
+                break;
+            case '-':
+                digitString= "minus";
+                break;
+            case '/':
+                digitString= "divide";
+                break;
+            case '%':
+                digitString= "percent";
+                break;
+            case '*':
+                digitString= "mult";
+                break;
+            case '=':
+                digitString= "equals";
+                break;
             default:
                 System.out.println("Invalid number !");
                 break;
@@ -100,24 +112,9 @@ public class DesktopFlow extends CommonOps {
         return digitString;
     }
 
-    @Step("Function that receives a number and checks if it is two digits or higher and divides it into factors")
-    private static void clickDigits(String numberString) {
-
-        for (int i = 0; i < numberString.length(); i++) {
-            char digitChar = numberString.charAt(i);
-
-//            int num = Integer.parseInt(number);
-//        while (num > 0) {
-//            String lastDigit = Integer.toString(num % 10);
-            String digitString=convertDigitToString(digitChar);
-            UIActions.click(operationsElementMap.get(digitString.toLowerCase()));
-//            num /=10;
-        }
-
-    }
 
     @Step("Clear calculator data")
-    public static void clear() {
+    public static void clearResults() {
         UIActions.click(mainPageCalculator.clearBtn);
     }
 }

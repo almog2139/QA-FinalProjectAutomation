@@ -40,9 +40,9 @@
     <CalculatorApp>Microsoft.WindowsCalculator_8wekyb3d8bbwe!App</CalculatorApp>
     <AppiumServerDesktop>http://127.0.0.1:4723</AppiumServerDesktop>
     <!--DataBase-->
-    <dbUrl>jdbc:mysql://sql12.freemysqlhosting.net:3306/sql12671678</dbUrl>
-    <dbUserName>sql12671678</dbUserName>
-    <dbPassword>JhbWBspkz4</dbPassword>
+    <dbUrl>jdbc:mysql://sql12.freemysqlhosting.net:3306/sql12672587</dbUrl>
+    <dbUserName>sql12672587</dbUserName>
+    <dbPassword>FMP9VnwPTP</dbPassword>
 
 
 </Environment>

@@ -1,6 +1,7 @@
 package utilities;
 
 import extensions.MobileActions;
+import extensions.UIActions;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
@@ -8,6 +9,7 @@ import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.windows.WindowsDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.restassured.RestAssured;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -76,7 +78,6 @@ public class CommonOps extends Base {
             if (!platform.equalsIgnoreCase("mobile")){
                 driver.quit();
                 if(platform.equalsIgnoreCase("web"))
-                    System.out.println("here");
                     ManageDB.closeConnection();
 
             }
@@ -100,7 +101,10 @@ Method Description:method that start after any method ,and calls a function that
              ElectronFlows.clearTaskList();
 
         } else if (platform.equalsIgnoreCase("desktop")) {
-            DesktopFlow.clear();
+           // DesktopFlow.clearResults();
+            //UIActions.click(mainPageCalculator.clearBtn);
+//            mainPageCalculator.clearBtn.click();
+//            driver.findElement(By.name("Clear")).click();
         } else if (platform.equalsIgnoreCase("web")) {
             driver.get(getData("MainPageUrl"));
 

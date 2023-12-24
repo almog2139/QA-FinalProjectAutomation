@@ -118,11 +118,67 @@ ApiFlow.updateTeam(teamName,email,7);
 ApiFlow.deleteTeam(8);
 ```
 ### Unit Converter: Mobile Testing with Appium Studio & Appium Driver
-####Test01 - Convert length
-![alt text](https://raw.githubusercontent.com/almog2139/QA-FinalProjectAutomation/master/ImageRepository/OrangeHrmLogo.png "Convert Length")
-####Test02 - Convert currency
-![alt text](https://raw.githubusercontent.com/almog2139/QA-FinalProjectAutomation/master/ImageRepository/OrangeHrmLogo.png "Convert Currency")
-####Test03 - Change misc favorites with swipe (appium method)
-![alt text](https://raw.githubusercontent.com/almog2139/QA-FinalProjectAutomation/master/ImageRepository/OrangeHrmLogo.png "Change Misc Favorites")
-*verify results/changes after any test
+#### Test01 - Convert length
+![alt text](https://raw.githubusercontent.com/almog2139/QA-FinalProjectAutomation/master/ImageRepository/test01.gif "Convert Length")
+#### Test02 - Convert currency
+![alt text](https://raw.githubusercontent.com/almog2139/QA-FinalProjectAutomation/master/ImageRepository/test02.gif "Convert Currency")
+```java
+ MobileFlowsUnitConverter.convertCurrency("60","USD");
+Verifications.verifyTextMobileElemenet(livingUnitConverter.eurCurrencyValue,"54.24");
+@Step("Convert currency")
+public  static void convertCurrency(String value,String currency){
+        MobileActions.click(mainPageUnitConverter.livingBtn);
+        MobileActions.click(livingUnitConverter.CurrencyBtn);
+        MobileActions.click(livingUnitConverter.valueInput);
+        if(value.length()>1){
+        for (int i = 0; i < value.length(); i++) {
+        char digit = value.charAt(i);
+        String digitString = String.valueOf(digit);
+        MobileActions.click(livingUnitConverter.dynamicCalcElement(digitString));
 
+        }
+        }
+        MobileActions.click(livingUnitConverter.okBtn);
+        MobileActions.click(livingUnitConverter.dropDown);
+        MobileActions.click(livingUnitConverter.dynamicCurrency(currency));
+
+        }
+```
+#### Test03 - Change misc favorites with swipe (appium method)
+![alt text](https://raw.githubusercontent.com/almog2139/QA-FinalProjectAutomation/master/ImageRepository/test03.gif "Change Misc Favorites")
+* verify results/changes after any test
+
+
+---
+
+### Todolist: Testing with Electron Driver
+![alt text](https://raw.githubusercontent.com/almog2139/QA-FinalProjectAutomation/master/ImageRepository/electron.gif "Electron Todo App")
+* Add new todo item with a color tag and verify number of elements 
+* Add new todos and mark task as completed
+* Clear the list after any test case
+* Add new items ,sort task by color
+
+---
+
+### Windows Calculator: Testing with WinAppDriver
+
+#### Simple Calculation - Based on pre-built methods
+![alt text](https://raw.githubusercontent.com/almog2139/QA-FinalProjectAutomation/master/ImageRepository/calc.gif "Calculator Desktop App")
+* Using a dynamic function allows multiple operations to be implemented in the code using only 1 line of code & 1 String as an input,verify expected results
+```java
+String actual=DesktopFlow.calculatAction("2+5*10-5+9");
+Verifications.verifyText(actual,"56");
+
+
+```
+---
+
+### Jenkins & Allure Reports
+
+#### Jenkins Basic & Blue Ocean Dashboards
+
+![alt text](https://raw.githubusercontent.com/almog2139/QA-FinalProjectAutomation/master/ImageRepository/jenkins.gif "Jenkins")
+#### Running several jobs at the same time that depend on build after other job are built 
+### Allure Reports
+![alt text](https://raw.githubusercontent.com/almog2139/QA-FinalProjectAutomation/master/ImageRepository/allure.gif "Allure Report")
+The reports show the 'steps' in each test, with info such as: description, duration, history, parameters & values, verification values, screenshots and more.

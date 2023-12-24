@@ -34,6 +34,8 @@ public class MainPage {
     public WebElement arrowIcon;
     @FindBy(className = "toggleVisibilityPanel_hNPyc")
     public WebElement visiblityToggleBtn;
+    @FindBy(css = ".toggleIconsWrapper_2kpi8 svg")
+    public WebElement completeSvgBtn;
 
     @FindBy(className = "tag_3u4he")
     public List<WebElement> colors;

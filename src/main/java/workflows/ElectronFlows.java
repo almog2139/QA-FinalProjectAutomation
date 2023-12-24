@@ -26,11 +26,8 @@ public class ElectronFlows extends CommonOps {
     }
     @Step("Clear task list")
     public static void clearTaskList(){
-        System.out.println("clear method");
        if(mainPageTodo.tasks.size()>0){
-           System.out.println("bigger 0");
            for (WebElement task:mainPageTodo.tasks) {
-               System.out.println("task"+task);
                UIActions.mouseHoverAndClick(mainPageTodo.deleteBtn);
            }
 
@@ -50,5 +47,17 @@ public class ElectronFlows extends CommonOps {
         }
         return  colors;
 
+    }
+    @Step("Complete task by name")
+    public static void completeTaskByName(String taskName){
+        System.out.println("taskName "+taskName);
+        if(mainPageTodo.tasks.size()>0){
+            for (WebElement task:mainPageTodo.tasks) {
+                if(task.getText().substring(11).replaceAll("(?m)^\\s+", "").equalsIgnoreCase(taskName)){
+                    UIActions.click(mainPageTodo.completeSvgBtn);
+                }
+            }
+
+        }
     }
 }

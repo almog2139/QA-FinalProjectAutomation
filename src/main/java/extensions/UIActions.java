@@ -16,6 +16,7 @@ public class UIActions extends CommonOps {
 
     @Step("Click on element ")
     public static void click(WebElement elem){
+        System.out.println("elem"+elem);
         //befor click actions wait 5 second to element be clickable
         wait.until(ExpectedConditions.elementToBeClickable(elem));
         elem.click();
@@ -62,7 +63,6 @@ public class UIActions extends CommonOps {
     }
     @Step("Mouse hover action and click on element ")
     public static void mouseHoverAndClick(WebElement element){
-        System.out.println("mouse");
         action.moveToElement(element).click().build().perform();
     }
     @Step("Scrool until find text")

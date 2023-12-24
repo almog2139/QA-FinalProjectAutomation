@@ -19,17 +19,17 @@ public class TodoElectron extends CommonOps {
     public void test01_addTask(){
         ElectronFlows.addTask("Learn React",getData("RgbBlue"));
         Verifications.verifyNumberOfElements(mainPageTodo.tasks,1);
-//        ElectronFlows.clearTaskList();
+
     }
 
- @Test
-    public void test02_addTasks(){
+ @Test(description = "Adding some tasks and complete task by name")
+    public void test02_addTasksAndCompleteTask(){
         ElectronFlows.addTask("Learn Java",getData("RgbBlue"));
         ElectronFlows.addTask("Learn C#",getData("RgbRed"));
         ElectronFlows.addTask("Learn Python",getData("RgbYellow"));
+        ElectronFlows.completeTaskByName("Learn Java");
         Uninterruptibles.sleepUninterruptibly(4, TimeUnit.SECONDS);
         Verifications.verifyNumberOfElements(mainPageTodo.tasks,3);
-//        ElectronFlows.clearTaskList();
     }
     @Test(description = "Test03-Add new tasks with some color ")
     @Description("Adding tasks with color, sorting by color and verifying the success of the sorting")
