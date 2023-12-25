@@ -34,20 +34,22 @@ public class DesktopFlow extends CommonOps {
         operationsElementMap.put("percent", mainPageCalculator.percentBtn);
         operationsElementMap.put("mult", mainPageCalculator.multBtn);
         operationsElementMap.put("equals", mainPageCalculator.equalsBtn);
+        operationsElementMap.put("right parenthesis", mainPageCalculator.rightParenthesis);
+        operationsElementMap.put("left parenthesis", mainPageCalculator.leftParenthesis);
 
     }
 
     @Step("Calculat Invoicing operations")
     public static String calculatAction(String equation) {
         initialOperationMap();
-        //2+5*10-5+9
+        UIActions.click(mainPageCalculator.menu);
+        UIActions.click(mainPageCalculator.scientificBtn);
         for (int i=0;i<equation.length();i++){
             String charToEnter=convertOperatorToString(equation.charAt(i));
             UIActions.click(operationsElementMap.get(charToEnter.toLowerCase()));
         }
         UIActions.click(mainPageCalculator.equalsBtn);
         String results=mainPageCalculator.calcResults.getText().split(" ")[2];
-
         return results;
 
    }
@@ -104,6 +106,12 @@ public class DesktopFlow extends CommonOps {
                 break;
             case '=':
                 digitString= "equals";
+                break;
+            case '(':
+                digitString= "left parenthesis";
+                break;
+            case ')':
+                digitString= "right parenthesis";
                 break;
             default:
                 System.out.println("Invalid number !");

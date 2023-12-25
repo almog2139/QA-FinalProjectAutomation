@@ -1,5 +1,6 @@
 package utilities;
 
+import com.google.common.util.concurrent.Uninterruptibles;
 import extensions.MobileActions;
 import extensions.UIActions;
 import io.appium.java_client.TouchAction;
@@ -101,7 +102,8 @@ Method Description:method that start after any method ,and calls a function that
              ElectronFlows.clearTaskList();
 
         } else if (platform.equalsIgnoreCase("desktop")) {
-           // DesktopFlow.clearResults();
+            DesktopFlow.clearResults();
+            Uninterruptibles.sleepUninterruptibly(3,TimeUnit.SECONDS);
             //UIActions.click(mainPageCalculator.clearBtn);
 //            mainPageCalculator.clearBtn.click();
 //            driver.findElement(By.name("Clear")).click();

@@ -15,14 +15,12 @@ public class CalculatorDesktop extends CommonOps {
     public void invoicingOperations(){
         String actual=DesktopFlow.calculatAction("2+5*10-5+9");
         Verifications.verifyText(actual,"56");
-        //DesktopFlow.clearResults();
-
     }
-//    @Test
-//    public void test01_a(){
-//        String actual=DesktopFlow.calculatAction("2+5");
-//        Verifications.verifyText(actual,"7");
-//    }
+    @Test
+    public void test02(){
+        String actual=DesktopFlow.calculatAction("(50/10)*8+1+(5*3)");
+        Verifications.verifyText(actual,"56");
+    }
 
 
 }

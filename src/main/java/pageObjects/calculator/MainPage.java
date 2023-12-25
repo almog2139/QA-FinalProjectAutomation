@@ -46,12 +46,21 @@ public class MainPage {
 
     @FindBy(name="Backspace")
     public WebElement removeBtn;
+    @FindBy(name="Left parenthesis")
+    public WebElement leftParenthesis;
+    @FindBy(name="Right parenthesis")
+    public WebElement rightParenthesis;
 
 
-    @FindBy(name = "Clear")
+    @FindBy(xpath = "//*[@AutomationId='clearEntryButton']")
     public WebElement clearBtn;
     @FindBy(xpath = "//*[@AutomationId='CalculatorResults']")
     public WebElement calcResults;
+
+    @FindBy(xpath = "//*[@AutomationId='TogglePaneButton']")
+    public WebElement menu;
+    @FindBy(xpath = "//*[@AutomationId='Scientific']")
+    public WebElement scientificBtn;
 
     public WebElement getZeroBtn(){
         return zeroBtn;
