@@ -163,7 +163,7 @@ public  static void convertCurrency(String value,String currency){
 ### Windows Calculator: Testing with WinAppDriver
 
 #### Simple Calculation - Based on pre-built methods
-![alt text](https://raw.githubusercontent.com/almog2139/QA-FinalProjectAutomation/master/ImageRepository/calc.gif "Calculator Desktop App")
+![alt text](https://raw.githubusercontent.com/almog2139/QA-FinalProjectAutomation/master/ImageRepository/calculator.gif "Calculator Desktop App")
 * Using a dynamic function allows multiple operations to be implemented in the code using only 1 line of code & 1 String as an input,verify expected results
 ```java
 String actual=DesktopFlow.calculatAction("2+5*10-5+9");
